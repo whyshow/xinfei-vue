@@ -1,0 +1,221 @@
+<!-- 公共组件 导航栏-->
+<template>
+    <!-- 导航栏-->
+
+  <div id="nav">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand fontfamily">信飞工程研发中心</div>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">首页</a></li>
+            <li><a href="/news?id=2">信飞动态</a></li>
+            <li><router-link to="/index?id=1">关于我们</router-link>
+              <ul class="dropdown-menu-tek">
+                <li><router-link to="/index?id=1">信飞简介</router-link></li>
+                <li><router-link to="/index?id=1">成员介绍</router-link></li>
+                <li><router-link to="/index?id=1">成果展示</router-link></li>
+              </ul>
+            </li>
+            <li><router-link to="/index?id=1">科大讯飞</router-link>
+              <ul class="dropdown-menu-tek">
+                <li><router-link to="/index?id=1">讯飞简介</router-link></li>
+                <li><router-link to="/index?id=1">科大讯飞班</router-link></li>
+              </ul>
+            </li>
+            <li class=""><a href="{:U('join')}">加入我们</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "NavigationBar"
+}
+$(function () {
+  $(".news_cont img").hide();
+  $(".item:first").addClass("active");
+  $(".ord:first").addClass("active");
+  var div_num = $("#member .member_div").length + 1;
+  var div_width = $("#member .member_div").outerWidth();
+  $("#member .member_view").width(div_width * div_num);
+
+  $(".navbar-nav>li").hover(function () {
+    $(this).children(".dropdown-menu-tek").stop().slideDown(200);
+  }, function () {
+    $(this).children(".dropdown-menu-tek").stop().slideUp(200);
+  })
+  $(".nav li").hover(function () {
+    $(this).addClass("nav-active");
+  }, function () {
+    $(this).removeClass("nav-active");
+  })
+
+})
+</script>
+
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.container-fluid {
+  padding: 0px;
+}
+
+a {
+  color: #222;
+  font-size: 16px;
+
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+.coursejava img {
+  position: absolute;
+  left: 35px;
+  top: -45px;
+  border: 3px solid #fff;
+  background: #fff;
+  border-radius: 60px;
+  transition: all 1s;
+}
+
+.coursejava:hover img {
+  transform: rotate(360deg);
+
+}
+
+ .javastatue span {
+  display: none;
+ }
+
+@media (min-width: 768px) {
+  .container-fluid > .navbar-header {
+    margin-left: 5%;
+  }
+
+  .navbar-nav {
+    margin-left: 24%;
+  }
+
+  .navbar-nav > li {
+    margin: 0px 15px;
+  }
+  .navbar-nav > li >a {
+    font-size: 20px;
+  }
+
+
+  .coursejava img {
+    position: absolute;
+    left: 30px;
+    top: -35px;
+    border: 3px solid #fff;
+    background: #fff;
+    width: 60px;
+    border-radius: 60px;
+    transition: all 1s;
+  }
+
+}
+@media (min-width: 320px) and (max-width: 420px) {
+  .coursejava img {
+    position: absolute;
+    left: 15px;
+    top: -35px;
+    border: 3px solid #fff;
+    background: #fff;
+    width: 60px;
+    border-radius: 60px;
+    transition: all 1s;
+  }
+
+
+  a {
+    color: #222;
+    font-size: 12px;
+  }
+}
+
+#member .member_div > img {
+  width: 100%;
+}
+
+
+#member .member_info > p {
+  margin-left: 10px;
+}
+
+#member .member_info > p:nth-child(1) {
+  font-size: 16px;
+}
+
+#member .member_info > p:nth-child(2) {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+.navbar-nav > li {
+  position: relative;
+}
+
+.dropdown-menu-tek {
+  width: 100%;
+  list-style: none;
+  background: #f8f8f8;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: none;
+
+}
+
+.dropdown-menu-tek > li {
+  height: 50px;
+  line-height: 50px;
+}
+
+.nav-active {
+  background: #e7e7e7;
+}
+
+.dropdown-menu-tek > li > a {
+  color: #777;
+}
+
+.dropdown-menu-tek > li > a:hover {
+  color: rgb(88, 163, 253);
+}
+
+.fontfamily{
+  font-family: 隶书;
+  font-size: 35px;
+ padding: 12px;
+}
+.navbar-toggle{
+  padding: 2px;
+  right: 25px;
+  top: 10px;
+}
+</style>

@@ -72,7 +72,7 @@ export default {
   margin-top: -4.5%;
   overflow: hidden;
 }
-*{
+.el-footer{
   padding: 0;
 }
 .banner{

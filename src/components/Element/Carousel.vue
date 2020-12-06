@@ -17,7 +17,7 @@
 
   <el-carousel :interval="5000" arrow="always" height="465px">
     <el-carousel-item v-for="item in 4" :key="item">
-      <div style=" width: 100%;height: 100%; background-image: url('http://www.ccit.club/Public/lunbo/2018-11-29/175711125052102.jpg')"></div>
+      <div style=" width: 100%;height: 100%; background: url('http://www.ccit.club/Public/lunbo/2018-11-29/175711125052102.jpg');background-size: cover;"></div>
 <!--      <img style="height: 500px;background-image: url('http://www.ccit.club/Public/lunbo/2018-11-29/175711125052102.jpg')"/>-->
     </el-carousel-item>
   </el-carousel>

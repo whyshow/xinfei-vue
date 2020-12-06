@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "@/components/Home/Home";
 import News from "@/components/News/News";
+import Details from "../components/Details/Details";
 Vue.use(VueRouter)
 // 路由
 const routes = [
@@ -19,6 +20,14 @@ const routes = [
     component: News,
     meta:{
       title:'信飞动态'
+    }
+  },
+  {
+    path: '/details',
+    name: 'Details',
+    component: Details,
+    meta:{
+      title:'动态详情'
     }
   }
 ]

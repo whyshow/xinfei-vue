@@ -1,72 +1,108 @@
 <!-- 信飞动态 时间轴-->
 <template>
+<!-- 时间轴新闻列表-->
   <div class="block">
-    <el-timeline>
-      <el-timeline-item  timestamp="2018/4/12" placement="top">
-        <el-card>
-          <h4>中国移动张滨：5G 安全责任应由利益相关方共同承担</h4>
-          <p>11月28日以 “新基建 新安全”为主题的 “2020 湾区创见 · 网络安全大会”在深圳召开。同期举办的 “5G 安全专场”上，中国移动集团信安中心总经理张滨表示，5G 连接主要来自垂直行业已经成为业界共识，IDC 数据显示，2024 年 60% 的 5G 连接来自行业，这也使得 5G 安全成为垂直行业关注的重点。
-            张滨表示：“企业选择 5G（新技术）的目的是因为 5G 更高效，更安全，但最担心的仍然是 5G（新技术）的安全性。”德勤数据显示，在对 415 位计划在 2021 年 Q1 采用 5G 的网络高管的调研中，有 56% 的企业对 5G 的安全性提出顾虑。</p>
+    <el-timeline v-for="(item,index) in news" :key="item.Article_id">
+      <template v-for="(citem,cindex) in colors">
+      <el-timeline-item v-if="cindex === index" :color="citem.color">
+        {{ item.Article_date }}
+        <router-link :to="'/details?id='+item.Article_id">
+        <el-card @mouseenter="">
+          <h4>{{ item.Article_title }}</h4>
+          <p  v-html="item.Article_text" ></p>
         </el-card>
+        </router-link>
       </el-timeline-item>
-      <el-timeline-item timestamp="2018/4/3" placement="top">
-        <el-card>
-          <h4>中国移动张滨：5G 安全责任应由利益相关方共同承担</h4>
-          <p>11月28日以 “新基建 新安全”为主题的 “2020 湾区创见 · 网络安全大会”在深圳召开。同期举办的 “5G 安全专场”上，中国移动集团信安中心总经理张滨表示，5G 连接主要来自垂直行业已经成为业界共识，IDC 数据显示，2024 年 60% 的 5G 连接来自行业，这也使得 5G 安全成为垂直行业关注的重点。
-            张滨表示：“企业选择 5G（新技术）的目的是因为 5G 更高效，更安全，但最担心的仍然是 5G（新技术）的安全性。”德勤数据显示，在对 415 位计划在 2021 年 Q1 采用 5G 的网络高管的调研中，有 56% 的企业对 5G 的安全性提出顾虑。</p>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item timestamp="2018/4/2" placement="top">
-        <el-card>
-          <h4>中国移动张滨：5G 安全责任应由利益相关方共同承担</h4>
-          <p>11月28日以 “新基建 新安全”为主题的 “2020 湾区创见 · 网络安全大会”在深圳召开。同期举办的 “5G 安全专场”上，中国移动集团信安中心总经理张滨表示，5G 连接主要来自垂直行业已经成为业界共识，IDC 数据显示，2024 年 60% 的 5G 连接来自行业，这也使得 5G 安全成为垂直行业关注的重点。
-            张滨表示：“企业选择 5G（新技术）的目的是因为 5G 更高效，更安全，但最担心的仍然是 5G（新技术）的安全性。”德勤数据显示，在对 415 位计划在 2021 年 Q1 采用 5G 的网络高管的调研中，有 56% 的企业对 5G 的安全性提出顾虑。</p>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item timestamp="2018/4/3" placement="top">
-        <el-card>
-          <h4>中国移动张滨：5G 安全责任应由利益相关方共同承担</h4>
-          <p>11月28日以 “新基建 新安全”为主题的 “2020 湾区创见 · 网络安全大会”在深圳召开。同期举办的 “5G 安全专场”上，中国移动集团信安中心总经理张滨表示，5G 连接主要来自垂直行业已经成为业界共识，IDC 数据显示，2024 年 60% 的 5G 连接来自行业，这也使得 5G 安全成为垂直行业关注的重点。
-            张滨表示：“企业选择 5G（新技术）的目的是因为 5G 更高效，更安全，但最担心的仍然是 5G（新技术）的安全性。”德勤数据显示，在对 415 位计划在 2021 年 Q1 采用 5G 的网络高管的调研中，有 56% 的企业对 5G 的安全性提出顾虑。</p>
-        </el-card>
-      </el-timeline-item>
-      <el-timeline-item timestamp="2018/4/2" placement="top">
-        <el-card>
-          <h4>中国移动张滨：5G 安全责任应由利益相关方共同承担</h4>
-          <p>11月28日以 “新基建 新安全”为主题的 “2020 湾区创见 · 网络安全大会”在深圳召开。同期举办的 “5G 安全专场”上，中国移动集团信安中心总经理张滨表示，5G 连接主要来自垂直行业已经成为业界共识，IDC 数据显示，2024 年 60% 的 5G 连接来自行业，这也使得 5G 安全成为垂直行业关注的重点。
-            张滨表示：“企业选择 5G（新技术）的目的是因为 5G 更高效，更安全，但最担心的仍然是 5G（新技术）的安全性。”德勤数据显示，在对 415 位计划在 2021 年 Q1 采用 5G 的网络高管的调研中，有 56% 的企业对 5G 的安全性提出顾虑。</p>
-        </el-card>
-      </el-timeline-item>
+      </template>
     </el-timeline>
-    <nav aria-label="Page navigation">
+
+<!-- 分页-->
+    <nav>
+<!-- <首页-->
       <ul class="pagination">
-        <li>
-          <a href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
+        <li :class="{'disabled' : page.currpage === 1 }" @click="refurbish( 1)">
+          <span v-if="isShow">
+            <span aria-hidden="true">首页</span>
+          </span>
         </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-          <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
+
+          <template v-for="(item,index) in page.pages">
+            <li :class="{'active' : item === page.currpage}" @click="refurbish(item)">
+              <span>
+                {{item}}
+                <span class="sr-only">
+                  (current)
+                </span>
+              </span>
+            </li>
+          </template>
+<!-- 尾页-->
+          <li class="" @click="refurbish(page.totalpages)" :class="{'disabled' :page.currpage === page.totalpages}" >
+            <span v-if="isShow">
+              <span class="sr-only"></span>
+              尾页
+            </span>
+          </li>
       </ul>
     </nav>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "Timeline"
+  data(){
+    return{
+      isShow:false,
+      news:[],
+      page:{},
+      colors:[
+          {  color: '#FF0000'}, { color: '#FF7F00'}, { color: '#FFFF00'}, { color: '#00FF00'},
+        { color: '#00FFFF'}
+        ]
+    }
+  },
+  // 生命周期函数
+  created() {
+    this.GetArticleList()
+  },
+  name: "Timeline",
+  methods:{
+    // 获取新闻列表 ps: 按时间排序
+    async GetArticleList() {
+      const ret = await this.$http.get('api/article')
+      // 判断请求是否成功
+      if (ret.data.code == 1){
+        this.news = ret.data.result
+        this.page = ret.data.page
+        this.isShow = true
+      }
+    },
+    async refurbish(id){
+      const ret = await this.$http.get('api/article?p='+id)
+      // 判断请求是否成功
+      if (ret.data.code == 1){
+        this.news = ret.data.result
+        this.page = ret.data.page
+        this.isShow = true
+        // 实现滚动效果
+        let top = document.documentElement.scrollTop || document.body.scrollTop;
+        const timeTop = setInterval(() => {
+          document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
+          if (top <= 0) {
+            clearInterval(timeTop);
+          }
+        }, 10);
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
+nav{
+  margin-left: 7.5%;
+}
   p{
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -81,5 +117,15 @@ export default {
   }
   .el-timeline-item{
     text-align: left;
+  }
+  a{
+    text-decoration:none;
+  }
+  .el-card:hover{
+    border:1px #FF0000 solid;
+    transform:scale(1.04);
+  }
+li{
+    cursor: pointer;
   }
 </style>

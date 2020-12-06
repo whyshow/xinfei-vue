@@ -1,20 +1,22 @@
-<!-- 最热新闻组件-->
+<!-- 公共组件 根据热度的新闻列表-->
 <template>
-  <div class="el-col-sm-22" id="hot">
-    <h3 class="text-left" style="margin-left: 20px;">最热文章</h3>
+
+  <div class="col-sm-6" style="padding-left: 3%;padding-right: 2%">
+    <h3 class="text-center">信飞动态</h3>
+    <p class="border_blue"></p>
     <div v-for="(item,index) in newsList">
-      <el-card style="margin-top: 5px;padding-right: 1%" v-if="index <4">
-        <div class="news"  style="margin-left: -5%">
-          <router-link :to="'/details?id='+item.Article_id">
-            <div class="date">
-              <h4>{{item.Article_date|dateFormat("MM")}}月</h4>
-              <p>{{item.Article_date|dateFormat("dd")}}日</p>
-            </div>
-            <h6 class="news_title" title="">{{ item.Article_title }}</h6>
-            <div class="news_cont" v-html="item.Article_text" style="font-size: 12px">
-            </div>
-          </router-link>
-        </div>
+      <el-card style="margin-top: 5px">
+      <div class="news">
+        <router-link :to="'/details?id='+item.Article_id">
+          <div class="date">
+            <h4>{{item.Article_date|dateFormat("MM")}}月</h4>
+            <p>{{item.Article_date|dateFormat("dd")}}日</p>
+          </div>
+          <h4 class="news_title" title="">{{ item.Article_title }}</h4>
+          <div class="news_cont" v-html="item.Article_text">
+          </div>
+        </router-link>
+      </div>
       </el-card>
     </div>
   </div>
@@ -27,20 +29,20 @@ export default {
       newsList:[]
     }
   },
-  inject: ['reload'],
   created() {
     this.GetArticleList()
   },
-  name: "HotNews",
+  name: "HotNewsList",
   methods:{
     async GetArticleList() {
-      const ret = await this.$http.get('api/article/hot')
+      const ret = await this.$http.get('api/article')
       // 判断请求是否成功
       if (ret.data.code == 1) {
         this.newsList = ret.data.result
       }
     }
-  },filters: {
+  },
+  filters: {
     dateFormat: function (date, fmt) {
       if (!date) return date;
       date = new Date(date);
@@ -81,6 +83,13 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+.border_blue {
+  width: 80px;
+  margin: 0 auto;
+  height: 2px;
+  background-color: rgb(88, 163, 253);
+  margin-bottom: 40px;
 }
 
 .news_cont{
@@ -177,7 +186,7 @@ a:hover {
 }
 .news .news_title {
   width: 25em;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #333;
   margin-top: 5px;

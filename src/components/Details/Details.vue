@@ -1,20 +1,18 @@
-<!-- 新闻拼接组件页面 -->
+<!-- 新闻详情页面-->
 <template>
-
   <el-container>
     <el-header>
       <!-- 导航栏组件-->
       <NavigationBar></NavigationBar>
     </el-header>
-
     <el-main>
       <div class="banner">
-        <span class="banner_title">信飞动态</span>
+        <span class="banner_title">动态详情</span>
       </div>
-      <div class="cent" style="margin-top: 2%">
+      <div class="cent" style="margin-top: 2%;height: 100%">
         <div class="one">
-          <!-- 时间轴新闻组件-->
-          <Timeline></Timeline>
+          <!-- 新闻详情组件-->
+          <NewsInfo v-bind:NewId="ID"></NewsInfo>
         </div>
         <div class="two">
           <!-- 最热新闻组件组件-->
@@ -29,36 +27,64 @@
 </template>
 
 <script>
-// 引入相关组件
-import NavigationBar from "@/components/Element/NavigationBar";
-import Timeline from "../Element/Timeline";
+import NavigationBar from "../Element/NavigationBar";
 import Footer from "../Element/Footer";
 import HotNews from "../Element/HotNews";
+import Timeline from "../Element/Timeline";
+import NewsInfo from "../Element/NewsInfo";
 
-// 页面动作
 export default {
-  // 测试路由接收参数
-  // created(){
-  //  console.log(this.$route.query)
-  // },
-  name: "News",
+  name: "Details",
+  // HTML模板提供数据
+  data(){
+    return{
+      ID:""
+    }
+  },
+  // 组件创建时调用
+  created(){
+    this.ReturnTop()
+    this.SetId(this.$route.query.id)
+  },
   // 插入组件
   components:{
     Footer,
     HotNews,
     Timeline,
-    NavigationBar
+    NavigationBar,
+    NewsInfo
+  },
+  watch:{
+    // 监听路由变化
+    '$route'(to,from) {
+      // 使页面回到顶部
+      this.ReturnTop()
+    }
+  },
+  methods:{
+    // 向子组件传递id
+    SetId(id){
+      this.ID = id
+    },
+    // 实现滚动回到顶部效果
+    ReturnTop(){
+      let top = document.documentElement.scrollTop || document.body.scrollTop;
+      const timeTop = setInterval(() => {
+        document.body.scrollTop = document.documentElement.scrollTop = top -= 50;
+        if (top <= 0) {
+          clearInterval(timeTop);
+        }
+      }, 10);
+    }
   }
 }
-
 </script>
 
-<!-- 拼接页面中的 css 样式-->
 <style scoped>
 .one{
   width: 65%;
   float: left;
-  padding-left: 2%;
+  padding-left: 4%;
   padding-right: 3%;
   box-sizing: border-box;
 }
@@ -110,7 +136,7 @@ export default {
     overflow: visible;
   }
   .el-footer{
- margin-top: 1%;
+    margin-top: 1%;
   }
 }
 </style>

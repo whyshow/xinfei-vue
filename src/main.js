@@ -3,6 +3,12 @@ import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
 
+// 导入 axios
+import axios from 'axios'
+//设置请求根路径
+axios.defaults.baseURL = 'http://api.ccit.club/'
+//挂载 axios 全局
+Vue.prototype.$http = axios
 Vue.config.productionTip = false
 // HTML 页面的title动态赋值
 router.beforeEach((to,from,next)=>{

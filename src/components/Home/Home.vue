@@ -1,17 +1,20 @@
 <template>
-
   <el-container>
     <el-header>
+      <!-- 导航栏组件-->
       <NavigationBar></NavigationBar>
     </el-header>
-
     <el-main>
-      <Carousel></Carousel>
+      <!-- 轮播图组件-->
+      <Carousel ></Carousel>
       <div class="cent">
+        <!-- 智慧教育组件-->
         <div><Wisdom></Wisdom></div>
-        <div><HotNewsList style="margin-top: 70px"></HotNewsList></div>
+        <!-- 信飞动态组件-->
+        <div><XinFeiDynamic style="margin-top: 10px"></XinFeiDynamic></div>
       </div>
     </el-main>
+    <!-- 底部组件-->
     <el-footer>
       <Footer></Footer>
     </el-footer>
@@ -22,14 +25,19 @@
 import NavigationBar from "@/components/Element/NavigationBar";
 import Carousel from "@/components/Element/Carousel";
 import Wisdom from "@/components/Element/Wisdoms";
-import HotNewsList from "@/components/Element/HotNewsList";
+import XinFeiDynamic from "../Element/XinFeiDynamic";
 import Footer from "@/components/Element/Footer";
 
 export default {
+  data(){
+    return{
+      hackReset:true
+    }
+  },
   name: "Home",
   components:{
     Footer,
-    HotNewsList,
+    XinFeiDynamic,
     Wisdom,
     NavigationBar,
     Carousel
@@ -43,8 +51,8 @@ export default {
   padding: 0;
 }
 .cent{
-  padding-right: 1%;
-  margin-left: 1%;
+  padding-right: 2%;
+  margin-left: 2%;
 
 }
 .el-footer{

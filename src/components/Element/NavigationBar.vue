@@ -17,19 +17,19 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/">首页</a></li>
-            <li><a href="/news?id=2">信飞动态</a></li>
-            <li><router-link to="/index?id=1">关于我们</router-link>
+            <li><router-link  to="/">首页</router-link ></li>
+            <li><router-link  to="/news">信飞动态</router-link ></li>
+            <li><router-link to="/">关于我们</router-link>
               <ul class="dropdown-menu-tek">
-                <li><router-link to="/index?id=1">信飞简介</router-link></li>
-                <li><router-link to="/index?id=1">成员介绍</router-link></li>
-                <li><router-link to="/index?id=1">成果展示</router-link></li>
+                <li><router-link to="/">信飞简介</router-link></li>
+                <li><router-link to="/">成员介绍</router-link></li>
+                <li><router-link to="/">成果展示</router-link></li>
               </ul>
             </li>
-            <li><router-link to="/index?id=1">科大讯飞</router-link>
+            <li><router-link to="/">科大讯飞</router-link>
               <ul class="dropdown-menu-tek">
-                <li><router-link to="/index?id=1">讯飞简介</router-link></li>
-                <li><router-link to="/index?id=1">科大讯飞班</router-link></li>
+                <li><router-link to="/">讯飞简介</router-link></li>
+                <li><router-link to="/">科大讯飞班</router-link></li>
               </ul>
             </li>
             <li class=""><a href="{:U('join')}">加入我们</a></li>

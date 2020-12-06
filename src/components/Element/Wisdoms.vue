@@ -2,7 +2,8 @@
 <template>
   <div class="col-sm-6">
     <!--<h3 class="text-center">智慧教育</h3>-->
-    <div class="block">
+    <div class="" style="margin-top:11%">
+      <el-card class="card">
       <h3 class="block-text-center">智慧教育</h3>
       <div class="col-sm-4 col-xs-5 wow bounceInLeft div1 div2">
         <div class="coursejava">
@@ -32,8 +33,10 @@
           </a>
         </div>
       </div>
+      </el-card>
     </div>
-    <div class="block">
+    <div style="margin-top: 8%">
+      <el-card class="card">
       <h3 class="block-text-center">创新人才</h3>
       <div class="col-sm-4 col-xs-6 wow bounceInLeft" style="margin-left: 18%;width: 41%">
         <div class="coursejava">
@@ -55,6 +58,7 @@
           </a>
         </div>
       </div>
+      </el-card>
     </div>
   </div>
 </template>
@@ -74,22 +78,13 @@ export default {
   padding: 0;
 }
 
-.block {
-
-  margin: 0px;
+.el-card:hover{
+  border:1px rgb(88, 163, 253) solid;
+  transform:scale(1.04);
+}
+.card{
   border: 1px solid #58A3FD;
-  width: 100%;
-  margin-top: 80px;
-  height: 140px;
 }
-.block:hover {
-  margin: 0px;
-  border: 1px solid #fd0007;
-  width: 100%;
-  margin-top: 80px;
-  height: 140px;
-}
-
 
 a {
   color: #222;

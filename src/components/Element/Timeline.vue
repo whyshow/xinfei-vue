@@ -9,7 +9,7 @@
         <router-link :to="'/details?id='+item.Article_id">
         <el-card @mouseenter="">
           <h4>{{ item.Article_title }}</h4>
-          <p  v-html="item.Article_text" ></p>
+          <p v-html="item.Article_text"></p>
         </el-card>
         </router-link>
       </el-timeline-item>

@@ -30,7 +30,7 @@
 
 <script>
 // 引入相关组件
-import NavigationBar from "@/components/Element/NavigationBar";
+import NavigationBar from "@/components/Element/TNavigationBar";
 import Timeline from "../Element/Timeline";
 import Footer from "../Element/Footer";
 import HotNews from "../Element/HotNews";
@@ -55,6 +55,9 @@ export default {
 
 <!-- 拼接页面中的 css 样式-->
 <style scoped>
+.el-footer{
+  position:relative;bottom:0;width:100%;height:100px;
+}
 .one{
   width: 65%;
   float: left;
@@ -95,13 +98,12 @@ export default {
   margin-left: -61px;
   margin-top: -26px;
 }
-@media (min-width: 320px) and (max-width: 420px) {
+@media (min-width: 320px) and (max-width: 48  0px) {
   .two{
     display: none;
   }
   .one{
     width: 100%;
-    margin-left: -6%;
   }
   .el-main{
     padding: 0;

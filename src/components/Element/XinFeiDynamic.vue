@@ -1,4 +1,4 @@
-<!-- 公共组件 根据热度的新闻列表-->
+<!-- 公共组件 根据信飞动态的新闻列表-->
 <template>
 
   <div class="col-sm-6" style="padding-left: 3%;padding-right: 2%">
@@ -143,7 +143,10 @@ a:hover {
     transition: all 1s;
   }
 }
-@media (min-width: 320px) and (max-width: 420px) {
+@media (min-width: 320px) and (max-width: 480px) {
+  .el-card__body{
+    padding-left: 0%;
+  }
   .coursejava img {
     position: absolute;
     left: 20px;

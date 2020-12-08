@@ -6,6 +6,7 @@ import './plugins/element.js'
 // 导入 axios
 import axios from 'axios'
 //设置请求根路径
+//axios.defaults.baseURL = 'http://127.0.0.1:8080/'
 axios.defaults.baseURL = 'http://api.ccit.club/'
 //挂载 axios 全局
 Vue.prototype.$http = axios

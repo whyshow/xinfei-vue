@@ -46,5 +46,10 @@ export default {
 </script>
 
 <style scoped>
-
+@media (max-width: 520px) {
+  .row{
+    margin-left: 5%;
+    margin-right: -5%;
+  }
+}
 </style>

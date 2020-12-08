@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import NavigationBar from "../Element/NavigationBar";
+import NavigationBar from "../Element/TNavigationBar";
 import Footer from "../Element/Footer";
 import HotNews from "../Element/HotNews";
 import Timeline from "../Element/Timeline";

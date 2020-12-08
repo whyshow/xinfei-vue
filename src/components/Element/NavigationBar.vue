@@ -1,6 +1,6 @@
 <!-- 公共组件 导航栏-->
 <template>
-    <!-- 导航栏-->
+  <!-- 导航栏-->
 
   <div id="nav">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -15,24 +15,31 @@
           </button>
           <div class="navbar-brand fontfamily">信飞工程研发中心</div>
         </div>
-        <div class="collapse navbar-collapse" id="example-navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><router-link  to="/">首页</router-link ></li>
-            <li><router-link  to="/news">信飞动态</router-link ></li>
-            <li><router-link to="/">关于我们</router-link>
-              <ul class="dropdown-menu-tek">
-                <li><router-link to="/">信飞简介</router-link></li>
-                <li><router-link to="/">成员介绍</router-link></li>
-                <li><router-link to="/">成果展示</router-link></li>
+        <div class="collapse navbar-collapse navbar-right" id="example-navbar-collapse">
+          <ul class="nav navbar-nav" v-for="(item,index) in AppBar">
+            <li @mouseenter="MouseEnter()" @mouseout="MouseOut()"><router-link to="/">{{item.name}}</router-link>
+              <ul class="dropdown-menu-tek" v-for="(items,indexs) in AppBar.children">
+                <li><router-link to="/">{{ items.cname }}</router-link></li>
+
               </ul>
             </li>
-            <li><router-link to="/">科大讯飞</router-link>
-              <ul class="dropdown-menu-tek">
-                <li><router-link to="/">讯飞简介</router-link></li>
-                <li><router-link to="/">科大讯飞班</router-link></li>
-              </ul>
-            </li>
-            <li class=""><a href="{:U('join')}">加入我们</a></li>
+
+<!--            <li><router-link  to="/">首页</router-link ></li>-->
+<!--            <li><router-link  to="/news">信飞动态</router-link ></li>-->
+<!--            <li @mouseenter="MouseEnter()" @mouseout="MouseOut()"><router-link to="/">关于我们</router-link>-->
+<!--              <ul class="dropdown-menu-tek">-->
+<!--                <li><router-link to="/">信飞简介</router-link></li>-->
+<!--                <li><router-link to="/">成员介绍</router-link></li>-->
+<!--                <li><router-link to="/">成果展示</router-link></li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--            <li v-on:@mouseenter="MouseEnter" @mouseout="MouseOut()"><router-link to="/">科大讯飞</router-link>-->
+<!--              <ul class="dropdown-menu-tek">-->
+<!--                <li><router-link to="/">讯飞简介</router-link></li>-->
+<!--                <li><router-link to="/">科大讯飞班</router-link></li>-->
+<!--              </ul>-->
+<!--            </li>-->
+<!--            <li class=""><a href="{:U('join')}">加入我们</a></li>-->
           </ul>
         </div>
       </div>
@@ -42,28 +49,46 @@
 
 <script>
 export default {
+  created() {
+   // this.GetAppBar()
+  },
+  data(){
+    return{
+      AppBar:[]
+    }
+  },
+  methods:{
+    async GetAppBar() {
+      const rest = await this.$http.get("api/appbar")
+      if (rest.data.code == 1){
+        this.AppBar = rest.data.data.appbar
+      }
+    },
+    MouseEnter(){
+      $(".navbar-nav>li").hover(function () {
+        $(this).children(".dropdown-menu-tek").stop().slideDown(200);
+      }, function () {
+        $(this).children(".dropdown-menu-tek").stop().slideUp(200);
+      })
+    },
+    MouseOut(){
+      $(".navbar-nav>li").hover(function () {
+        $(this).children(".dropdown-menu-tek").stop().slideDown(200);
+      }, function () {
+        $(this).children(".dropdown-menu-tek").stop().slideUp(200);
+      })
+    }
+  },
   name: "NavigationBar"
 }
 $(function () {
-  $(".news_cont img").hide();
-  $(".item:first").addClass("active");
-  $(".ord:first").addClass("active");
-  var div_num = $("#member .member_div").length + 1;
-  var div_width = $("#member .member_div").outerWidth();
-  $("#member .member_view").width(div_width * div_num);
-
   $(".navbar-nav>li").hover(function () {
     $(this).children(".dropdown-menu-tek").stop().slideDown(200);
   }, function () {
     $(this).children(".dropdown-menu-tek").stop().slideUp(200);
   })
-  $(".nav li").hover(function () {
-    $(this).addClass("nav-active");
-  }, function () {
-    $(this).removeClass("nav-active");
-  })
-
 })
+
 </script>
 
 <style scoped>
@@ -111,11 +136,6 @@ a:hover {
   .container-fluid > .navbar-header {
     margin-left: 5%;
   }
-
-  .navbar-nav {
-    margin-left: 24%;
-  }
-
   .navbar-nav > li {
     margin: 0px 15px;
   }
@@ -155,24 +175,6 @@ a:hover {
   }
 }
 
-#member .member_div > img {
-  width: 100%;
-}
-
-
-#member .member_info > p {
-  margin-left: 10px;
-}
-
-#member .member_info > p:nth-child(1) {
-  font-size: 16px;
-}
-
-#member .member_info > p:nth-child(2) {
-  border-bottom: 1px solid #fff;
-  padding-bottom: 10px;
-}
-
 .navbar-nav > li {
   position: relative;
 }
@@ -188,7 +190,6 @@ a:hover {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   display: none;
-
 }
 
 .dropdown-menu-tek > li {

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-<!--    <keep-alive>-->
+    <keep-alive>
    <router-view v-if="isReload"></router-view>
-<!--    </keep-alive>-->
+    </keep-alive>
   </div>
 </template>
 <script>
@@ -27,6 +27,8 @@ export default {
     }
   }
 }
+
+
 </script>
 
 <style>

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import NavigationBar from "@/components/Element/NavigationBar";
+import NavigationBar from "@/components/Element/TNavigationBar";
 import Carousel from "@/components/Element/Carousel";
 import Wisdom from "@/components/Element/Wisdoms";
 import XinFeiDynamic from "../Element/XinFeiDynamic";

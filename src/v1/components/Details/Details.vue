@@ -104,13 +104,13 @@ export default {
 .banner{
   position: relative;
   height: 200px;
-  background-image:url('../../../public/img/bg17.jpg');
+  background-image:url('../../../../public/img/bg17.jpg');
 }
 .banner_title{
   width: 122px;
   height: 52px;
   display: block;
-  background-image:url('../../../public/img/c01.png');
+  background-image:url('../../../../public/img/c01.png');
   font-size: 20px;
   color: #fff;
   line-height: 42px;

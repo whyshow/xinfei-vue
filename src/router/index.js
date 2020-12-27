@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from "@/components/Home/Home";
-import News from "@/components/News/News";
-import Details from "../components/Details/Details";
+import Home from "@/v1/components/Home/Home";
+import News from "@/v1/components/News/News";
+import Details from "@/v1/components/Details/Details";
 Vue.use(VueRouter)
 // 路由
 const routes = [

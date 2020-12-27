@@ -8,7 +8,7 @@
       <div class="col-sm-4 col-xs-5 wow bounceInLeft div1 div2">
         <div class="coursejava">
           <a class="kctu" href="http://47.96.38.38:9090/" target="_blank">
-            <img class="lunwen" src="../../../public/img/lunwen.png"
+            <img class="lunwen" src="../../../../public/img/lunwen.png"
                  style="background: rgb(1,111,182);">
             <p class="coursename">论文检测系统</p>
             <p class="javastatue"><span>点击进入</span></p>
@@ -18,7 +18,7 @@
       <div class="col-sm-4 col-xs-5 wow bounceInLeft" style="width: 30%">
         <div class="coursejava">
           <a class="kctu" href="http://47.96.38.38:8033/index.php">
-            <img class="lunwen" src="../../../public/img/shizibaozhang.png" style="background: rgb(1,111,182);">
+            <img class="lunwen" src="../../../../public/img/shizibaozhang.png" style="background: rgb(1,111,182);">
             <p class="coursename">师资管理平台</p>
             <p class="javastatue"><span>点击进入</span></p>
           </a>
@@ -27,7 +27,7 @@
       <div class="col-sm-4 col-xs-5 wow bounceInLeft" style="width: 30%">
         <div class="coursejava">
           <a class="kctu" href="http://47.96.38.38:8999/survey/user/login">
-            <img class="lunwen" src="../../../public/img/java.png" style="background: rgb(1,111,182);" >
+            <img class="lunwen" src="../../../../public/img/java.png" style="background: rgb(1,111,182);" >
             <p class="coursename">问卷系统</p>
             <p class="javastatue"><span>点击进入</span></p>
           </a>
@@ -41,7 +41,7 @@
       <div class="col-sm-4 col-xs-6 wow bounceInLeft" style="margin-left: 18%;width: 41%">
         <div class="coursejava">
           <a class="kctu" href="{:U('member')}" target="_blank">
-            <img class="lunwen" src="../../../public/img/rencai.png"
+            <img class="lunwen" src="../../../../public/img/rencai.png"
                  style="background: rgb(1,111,182);">
             <p class="coursename">工程人才</p>
             <p class="javastatue"><span>点击进入</span></p>
@@ -51,7 +51,7 @@
       <div class="col-sm-4 col-xs-6 wow bounceInLeft" style="width: 41%">
         <div class="coursejava">
           <a class="kctu" href="{:U('achievement')}" target="_blank">
-            <img class="lunwen" src="../../../public/img/jiaoxuechengguo.png"
+            <img class="lunwen" src="../../../../public/img/jiaoxuechengguo.png"
                  style="background: rgb(1,111,182);">
             <p class="coursename">创新成果</p>
             <p class="javastatue"><span>点击进入</span></p>

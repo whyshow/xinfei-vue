@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import NavigationBar from "@/components/Element/TNavigationBar";
-import Carousel from "@/components/Element/Carousel";
-import Wisdom from "@/components/Element/Wisdoms";
+import NavigationBar from "@/v1/components/Element/TNavigationBar";
+import Carousel from "@/v1/components/Element/Carousel";
+import Wisdom from "@/v1/components/Element/Wisdoms";
 import XinFeiDynamic from "../Element/XinFeiDynamic";
-import Footer from "@/components/Element/Footer";
+import Footer from "@/v1/components/Element/Footer";
 
 export default {
   data(){

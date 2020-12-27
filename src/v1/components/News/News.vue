@@ -30,7 +30,7 @@
 
 <script>
 // 引入相关组件
-import NavigationBar from "@/components/Element/TNavigationBar";
+import NavigationBar from "@/v1/components/Element/TNavigationBar";
 import Timeline from "../Element/Timeline";
 import Footer from "../Element/Footer";
 import HotNews from "../Element/HotNews";
@@ -81,13 +81,13 @@ export default {
 .banner{
   position: relative;
   height: 200px;
-  background-image:url('../../../public/img/bg17.jpg');
+  background-image:url('../../../../public/img/bg17.jpg');
 }
 .banner_title{
   width: 122px;
   height: 52px;
   display: block;
-  background-image:url('../../../public/img/c01.png');
+  background-image:url('../../../../public/img/c01.png');
   font-size: 20px;
   color: #fff;
   line-height: 42px;

@@ -28,7 +28,7 @@ export default {
     }
   },
   props:{
-    NewId:Number
+    NewId:""
   },
   created() {
     // 根据id获取新闻详情数据
@@ -39,6 +39,13 @@ export default {
   methods:{
     async GetOneArticle(id) {
       const ret = await this.$http.get('api/article/'+id)
+      if (ret.data.code === 0){
+        this.$message({
+          message: ret.data.message, center: true, type: 'warning', duration: 2000, onClose: () => {
+            this.$router.go(-1)
+          }
+        })
+      }
       this.result = ret.data.result
     }
   }

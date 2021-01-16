@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from "@/v1/components/Home/Home";
 import News from "@/v1/components/News/News";
 import Details from "@/v1/components/Details/Details";
+import Member from "@/v1/components/Member/Member";
 Vue.use(VueRouter)
 // 路由
 const routes = [
@@ -28,6 +29,14 @@ const routes = [
     component: Details,
     meta:{
       title:'动态详情'
+    }
+  },
+  {
+    path: '/member',
+    name: 'Member',
+    component: Member,
+    meta:{
+      title:'成员介绍'
     }
   }
 ]

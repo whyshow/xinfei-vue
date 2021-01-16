@@ -31,7 +31,7 @@
 <script>
 // 引入相关组件
 import NavigationBar from "@/v1/components/Element/TNavigationBar";
-import Timeline from "../Element/Timeline";
+import Timeline from "./Timeline";
 import Footer from "../Element/Footer";
 import HotNews from "../Element/HotNews";
 
@@ -98,7 +98,7 @@ export default {
   margin-left: -61px;
   margin-top: -26px;
 }
-@media (min-width: 320px) and (max-width: 48  0px) {
+@media (min-width: 320px) and (max-width: 480px) {
   .two{
     display: none;
   }

@@ -30,8 +30,8 @@
 import NavigationBar from "../Element/TNavigationBar";
 import Footer from "../Element/Footer";
 import HotNews from "../Element/HotNews";
-import Timeline from "../Element/Timeline";
-import NewsInfo from "../Element/NewsInfo";
+import Timeline from "../News/Timeline";
+import NewsInfo from "./NewsInfo";
 
 export default {
   name: "Details",

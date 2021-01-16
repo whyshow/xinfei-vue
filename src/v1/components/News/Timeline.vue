@@ -7,7 +7,7 @@
       <el-timeline-item v-if="cindex === index" :color="citem.color">
         {{ item.Article_date }}
         <router-link :to="'/details?id='+item.Article_id">
-        <el-card @mouseenter="">
+        <el-card @mouseenter="" :style="{border:'1px '+ colors[index].color+' solid'}">
           <h4>{{ item.Article_title }}</h4>
           <p v-html="item.Article_text"></p>
         </el-card>
@@ -58,7 +58,7 @@ export default {
       page:{},
       colors:[
           {  color: '#FF0000'}, { color: '#FF7F00'}, { color: '#FFFF00'}, { color: '#00FF00'},
-        { color: '#00FFFF'}
+        { color: '#00FFFF'},{color: '#0000FF'},{color: '#8B00FF'}
         ]
     }
   },

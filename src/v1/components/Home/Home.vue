@@ -6,10 +6,10 @@
     </el-header>
     <el-main>
       <!-- 轮播图组件-->
-      <Carousel ></Carousel>
+      <Carousel></Carousel>
       <div class="cent">
         <!-- 智慧教育组件-->
-        <div><Wisdom></Wisdom></div>
+        <div  ><Wisdom></Wisdom></div>
         <!-- 信飞动态组件-->
         <div><XinFeiDynamic style="margin-top: 10px"></XinFeiDynamic></div>
       </div>
@@ -23,9 +23,9 @@
 
 <script>
 import NavigationBar from "@/v1/components/Element/TNavigationBar";
-import Carousel from "@/v1/components/Element/Carousel";
-import Wisdom from "@/v1/components/Element/Wisdoms";
-import XinFeiDynamic from "../Element/XinFeiDynamic";
+import Carousel from "@/v1/components/Home/Carousel";
+import Wisdom from "@/v1/components/Home/Wisdoms";
+import XinFeiDynamic from "./XinFeiDynamic";
 import Footer from "@/v1/components/Element/Footer";
 
 export default {
@@ -51,8 +51,9 @@ export default {
   padding: 0;
 }
 .cent{
+  width: 100%;
   padding-right: 2%;
-  margin-left: 2%;
+  margin-left: 1%;
 
 }
 .el-footer{

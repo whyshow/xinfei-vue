@@ -6,7 +6,7 @@
       <el-card style="margin-top: 5px;padding-right: 1%" v-if="index <4">
         <div class="news"  style="margin-left: -5%">
           <router-link :to="'/details?id='+item.Article_id">
-            <div class="date">
+            <div class="date" :style="{backgroundColor:colors[index].color}">
               <h4>{{item.Article_date|dateFormat("MM")}}月</h4>
               <p>{{item.Article_date|dateFormat("dd")}}日</p>
             </div>
@@ -24,7 +24,11 @@
 export default {
   data(){
     return{
-      newsList:[]
+      newsList:[],
+      colors:[
+        {  color: '#FF0000'}, { color: '#FF7F00'}, { color: '#FFFF00'}, { color: '#00FF00'},
+        { color: '#00FFFF'},{color: '#0000FF'},{color: '#8B00FF'}
+      ]
     }
   },
   inject: ['reload'],

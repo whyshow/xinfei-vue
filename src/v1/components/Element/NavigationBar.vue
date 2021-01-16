@@ -20,26 +20,8 @@
             <li @mouseenter="MouseEnter()" @mouseout="MouseOut()"><router-link to="/">{{item.name}}</router-link>
               <ul class="dropdown-menu-tek" v-for="(items,indexs) in AppBar.children">
                 <li><router-link to="/">{{ items.cname }}</router-link></li>
-
               </ul>
             </li>
-
-<!--            <li><router-link  to="/">首页</router-link ></li>-->
-<!--            <li><router-link  to="/news">信飞动态</router-link ></li>-->
-<!--            <li @mouseenter="MouseEnter()" @mouseout="MouseOut()"><router-link to="/">关于我们</router-link>-->
-<!--              <ul class="dropdown-menu-tek">-->
-<!--                <li><router-link to="/">信飞简介</router-link></li>-->
-<!--                <li><router-link to="/">成员介绍</router-link></li>-->
-<!--                <li><router-link to="/">成果展示</router-link></li>-->
-<!--              </ul>-->
-<!--            </li>-->
-<!--            <li v-on:@mouseenter="MouseEnter" @mouseout="MouseOut()"><router-link to="/">科大讯飞</router-link>-->
-<!--              <ul class="dropdown-menu-tek">-->
-<!--                <li><router-link to="/">讯飞简介</router-link></li>-->
-<!--                <li><router-link to="/">科大讯飞班</router-link></li>-->
-<!--              </ul>-->
-<!--            </li>-->
-<!--            <li class=""><a href="{:U('join')}">加入我们</a></li>-->
           </ul>
         </div>
       </div>

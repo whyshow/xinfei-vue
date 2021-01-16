@@ -39,7 +39,7 @@ export default {
   methods:{
     async GetOneArticle(id) {
       const ret = await this.$http.get('api/article/'+id)
-      if (ret.data.code === 0){
+      if (ret.data.code === -1){
         this.$message({
           message: ret.data.message, center: true, type: 'warning', duration: 2000, onClose: () => {
             this.$router.go(-1)

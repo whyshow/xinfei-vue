@@ -1,14 +1,14 @@
 <!-- 公共组件 根据信飞动态的新闻列表-->
 <template>
 
-  <div class="col-sm-6" style="padding-left: 3%;padding-right: 2%">
+  <div class="col-sm-6" style="padding-left: 1%">
     <h3 class="text-center">信飞动态</h3>
     <p class="border_blue"></p>
     <div v-for="(item,index) in newsList">
-      <el-card style="margin-top: 5px">
+      <el-card style="margin-top: 5px" :style="{border:'1px '+ colors[index].color+' solid'}">
       <div class="news">
         <router-link :to="'/details?id='+item.Article_id">
-          <div class="date">
+          <div class="date" :style="{backgroundColor:colors[index].color}">
             <h4>{{item.Article_date|dateFormat("MM")}}月</h4>
             <p>{{item.Article_date|dateFormat("dd")}}日</p>
           </div>
@@ -26,7 +26,11 @@
 export default {
   data(){
     return{
-      newsList:[]
+      newsList:[],
+      colors:[
+        {  color: '#FF0000'}, { color: '#FF7F00'}, { color: '#FFFF00'}, { color: '#00FF00'},
+        { color: '#00FFFF'},{color: '#0000FF'},{color: '#8B00FF'}
+      ]
     }
   },
   created() {
@@ -144,8 +148,8 @@ a:hover {
   }
 }
 @media (min-width: 320px) and (max-width: 480px) {
-  .el-card__body{
-    padding-left: 0%;
+  .news{
+    margin-left: -8%
   }
   .coursejava img {
     position: absolute;

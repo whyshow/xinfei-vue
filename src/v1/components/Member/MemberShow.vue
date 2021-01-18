@@ -17,7 +17,7 @@
 
         <div v-for="vak in userdata" style="float: left;padding: 15px">
           <el-card :body-style="{ padding: '0px' }" shadow="always" style="border: 1px #eeecea solid">
-              <img :src='vak.User_icon'>
+              <img :src='vak.User_icon' style=" background-image: url('../../../../public/img/err.jpeg')">
             <div >
               <h4 style="padding: 5px">姓 名：{{vak.User_name}}</h4>
               <p style="padding: 5px">职 位：核心成员</p>
@@ -86,6 +86,9 @@ export default {
 </script>
 
 <style scoped>
+.img{
+  background-image: url("../../../../public/img/err.jpeg");
+}
 .block{
   height: 100px;
 }

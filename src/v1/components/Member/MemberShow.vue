@@ -19,7 +19,7 @@
           <el-card :body-style="{ padding: '0px' }" shadow="always" style="border: 1px #eeecea solid">
               <img :src='vak.User_icon'>
             <div >
-              <h4 style="padding: 5px">姓 名：{{vak.User_motto}}</h4>
+              <h4 style="padding: 5px">姓 名：{{vak.User_name}}</h4>
               <p style="padding: 5px">职 位：核心成员</p>
               <p style="padding: 5px">座右铭：{{vak.User_motto}}</p>
               <p style="padding: 5px">班 级：{{vak.User_class}}</p>

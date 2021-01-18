@@ -5,7 +5,7 @@
     <h3 class="text-center">信飞动态</h3>
     <p class="border_blue"></p>
     <div v-for="(item,index) in newsList">
-      <el-card style="margin-top: 5px" :style="{border:'1px '+ colors[index].color+' solid'}">
+      <el-card style="margin-top: 5px">
       <div class="news">
         <router-link :to="'/details?id='+item.Article_id">
           <div class="date" :style="{backgroundColor:colors[index].color}">

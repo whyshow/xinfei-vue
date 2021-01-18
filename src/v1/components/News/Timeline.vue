@@ -7,7 +7,7 @@
       <el-timeline-item v-if="cindex === index" :color="citem.color">
         {{ item.Article_date }}
         <router-link :to="'/details?id='+item.Article_id">
-        <el-card @mouseenter="" :style="{border:'1px '+ colors[index].color+' solid'}">
+        <el-card @mouseenter="">
           <h4>{{ item.Article_title }}</h4>
           <p v-html="item.Article_text"></p>
         </el-card>
